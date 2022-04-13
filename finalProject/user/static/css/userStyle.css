@@ -12,7 +12,7 @@ body{
   justify-content:left;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(135deg, #b1b4b7, #ffa500);
 }
 .container{
     margin-left: 10%;
@@ -37,9 +37,9 @@ body{
   height: 3px;
   width: 30px;
   border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(135deg, #e3f2fc, #ffa500);
 }
-.content form .user-details{
+.content form .person-details{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -52,16 +52,16 @@ body{
     justify-content: space-between;
     margin: 20px 0 12px 0;
   }
-form .user-details .input-box{
+form .person-details .input{
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
-form .input-box span.details{
+form .input span.deta{
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
-.user-details .input-box input{
+.person-details .input input{
   height: 45px;
   width: 100%;
   outline: none;
@@ -72,20 +72,22 @@ form .input-box span.details{
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
-.user-details .input-box input:focus,
-.user-details .input-box input:valid{
-  border-color: #9b59b6;
+.person-details .input input:focus,
+.person-details .input input:valid{
+  border-color: #ffa500;
 }
-form .user-details1 .input-box{
+form .user-details1 .input{
     margin-bottom: 15px;
     width: calc(100% / 2 - 20px);
   }
-  form .input-box span.details{
+  form .input span.deta
+  
+  {
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
   }
-  .user-details1 .input-box input{
+  .user-details1 .input input{
     height: 45px;
     width: 100%;
     outline: none;
@@ -96,11 +98,11 @@ form .user-details1 .input-box{
     border-bottom-width: 2px;
     transition: all 0.3s ease;
   }
-  .user-details1 .input-box input:focus,
-  .user-details1 .input-box input:valid{
-    border-color: #9b59b6;
+  .user-details1 .input input:focus,
+  .user-details1 .input input:valid{
+    border-color: #ffa500;
   }
- form .gender-details .gender-title{
+ form .genderd .gender-title{
   font-size: 20px;
   font-weight: 500;
  }
@@ -108,7 +110,7 @@ form .user-details1 .input-box{
    display: flex;
    width: 80%;
    margin: 14px 0 ;
-   justify-content: space-between;
+   justify-content: space-around;
  }
  form .category label{
    display: flex;
@@ -124,10 +126,10 @@ form .user-details1 .input-box{
   border: 5px solid transparent;
   transition: all 0.3s ease;
 }
- #dot-1:checked ~ .category label .one,
- #dot-2:checked ~ .category label .two,
+ #d1:checked ~ .category label .one,
+ #d2:checked ~ .category label .two,
  #dot-3:checked ~ .category label .three{
-   background: #9b59b6;
+   background: #ffa500;
    border-color: #d9d9d9;
  }
  form input[type="radio"]{
@@ -148,28 +150,28 @@ form .user-details1 .input-box{
    letter-spacing: 1px;
    cursor: pointer;
    transition: all 0.3s ease;
-   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+   background: linear-gradient(135deg, #e8f0f6, #ffa500);
  }
  form .button input:hover{
   /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(-135deg, #dce7ef, #ffa500);
   }
  @media(max-width: 584px){
  .container{
   max-width: 100%;
 }
-form .user-details .input-box{
+form .person-details .input{
     margin-bottom: 15px;
     width: 100%;
   }
   form .category{
     width: 100%;
   }
-  .content form .user-details{
+  .content form .person-details{
     max-height: 300px;
     overflow-y: scroll;
   }
-  .user-details::-webkit-scrollbar{
+  .person-details::-webkit-scrollbar{
     width: 5px;
   }
   body{
@@ -178,7 +180,7 @@ form .user-details .input-box{
     justify-content:left;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(-135deg, #dce7ef, #ffa500);
 
   }
   }
@@ -192,7 +194,7 @@ form .user-details .input-box{
     justify-content:left;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(-135deg, #dce7ef, #ffa500);
 
   }
 }
