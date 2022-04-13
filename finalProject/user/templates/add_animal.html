@@ -59,14 +59,14 @@
                             <option value="catogory_id">{{catogory.name}}</option>
                             <option value="catogory_id">{{catogory.name}}</option>
                         </select>
+                        {% endfor %}
                     </div>
                     <div class="form-input">
                         <span class="details">Photo of your pet</span>
                         <form method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                                 <input type="file" name="upload" accept="image/*">
-                                <br>
-                                <button type="submit">Submit</button>
+                                <button id="button" type="submit">Submit</button>
                         </form>
                     </div>
                     <div class="button">
