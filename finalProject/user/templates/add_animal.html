@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Animal</title>
+    <link rel="stylesheet" href="D:\Desktop\Axsos\Python Proejct\Python_Project\finalProject\user\static\add_animal.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-nav">
+            <div class="logo">
+                <img src="D:\Desktop\Axsos\Python Proejct\Python_Project\finalProject\user\static\Pet_Shop.png" alt="PetShop_logo">
+            </div>
+            <div class="links">
+                <a href="#">Home</a><a href="#">Animals</a><a href="#">Add Animal</a><a href="#">About Us</a>
+            </div>
+            <div class="search-bar">
+                <form id="form" onsubmit="event.preventDefault();" role="search">
+                    <label for="search">Search for stuff</label>
+                    <input id="search" type="search" placeholder="Search..." autofocus required />
+                    <button type="submit">Go</button>    
+                </form>
+            </div>
+        </div>
+        <h2>Add Your Pet for Sale</h2>
+        <div class="main">
+            <div class="content">
+                <form action="#">
+                <div class="user-details">
+                    <div class="form-input">
+                        <span class="details">Pet Name</span>
+                        <input type="text" placeholder="Name..." required name="pet_name">
+                    </div>
+                    <div class="form-input">
+                        <span class="details">Pet Age</span>
+                        <input type="text" placeholder="Age..." required name="pet_age">
+                    </div>
+                    <div class="form-input">
+                        <span class="details">Description</span>
+                        <textarea
+                        type="text"
+                        rows="5"
+                        placeholder="Pet Description"
+                        name="pet_description">
+                        </textarea>
+                    </div>
+                    <div class="form-input">
+                        <span class="details">Pet Price</span>
+                        <input type="text" placeholder="$$$" required name="pet_price">
+                    </div>
+                    <div class="form-input">
+                        <span class="details">Pet Catogory</span>
+                        {% for catogory in all_catogories %}
+                        <select name="catgs" id="catgs">
+                            <option value="catogory_id">{{catogory.name}}</option>
+                            <option value="catogory_id">{{catogory.name}}</option>
+                            <option value="catogory_id">{{catogory.name}}</option>
+                            <option value="catogory_id">{{catogory.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-input">
+                        <span class="details">Photo of your pet</span>
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                                <input type="file" name="upload" accept="image/*">
+                                <br>
+                                <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Add">
+                    </div>
+                </div>
+</body>
+</html>

@@ -12,7 +12,7 @@ body{
   justify-content:left;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #138f8d);
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 .container{
     margin-left: 10%;
@@ -37,7 +37,7 @@ body{
   height: 3px;
   width: 30px;
   border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #138f8d);
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 .content form .user-details{
   display: flex;
@@ -52,16 +52,16 @@ body{
     justify-content: space-between;
     margin: 20px 0 12px 0;
   }
-form .user-details .input{
+form .user-details .input-box{
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
-form .input span.details{
+form .input-box span.details{
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
-.user-details .input input{
+.user-details .input-box input{
   height: 45px;
   width: 100%;
   outline: none;
@@ -72,20 +72,20 @@ form .input span.details{
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
-.user-details .input input:focus,
-.user-details .input input:valid{
-  border-color: #138f8d;
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
 }
-form .user-details1 .input{
+form .user-details1 .input-box{
     margin-bottom: 15px;
     width: calc(100% / 2 - 20px);
   }
-  form .input span.details{
+  form .input-box span.details{
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
   }
-  .user-details1 .input input{
+  .user-details1 .input-box input{
     height: 45px;
     width: 100%;
     outline: none;
@@ -96,11 +96,11 @@ form .user-details1 .input{
     border-bottom-width: 2px;
     transition: all 0.3s ease;
   }
-  .user-details1 .input input:focus,
-  .user-details1 .input input:valid{
-    border-color: #138f8d;
+  .user-details1 .input-box input:focus,
+  .user-details1 .input-box input:valid{
+    border-color: #9b59b6;
   }
- form .genderd .gender-title{
+ form .gender-details .gender-title{
   font-size: 20px;
   font-weight: 500;
  }
@@ -108,7 +108,7 @@ form .user-details1 .input{
    display: flex;
    width: 80%;
    margin: 14px 0 ;
-   justify-content: space-around;
+   justify-content: space-between;
  }
  form .category label{
    display: flex;
@@ -124,10 +124,10 @@ form .user-details1 .input{
   border: 5px solid transparent;
   transition: all 0.3s ease;
 }
- #d1:checked ~ .category label .one,
- #d2:checked ~ .category label .two,
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
  #dot-3:checked ~ .category label .three{
-   background: #138f8d;
+   background: #9b59b6;
    border-color: #d9d9d9;
  }
  form input[type="radio"]{
@@ -148,17 +148,17 @@ form .user-details1 .input{
    letter-spacing: 1px;
    cursor: pointer;
    transition: all 0.3s ease;
-   background: linear-gradient(135deg, #71b7e6, #138f8d);
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
  }
  form .button input:hover{
   /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #71b7e6, #138f8d);
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
   }
  @media(max-width: 584px){
  .container{
   max-width: 100%;
 }
-form .user-details .input{
+form .user-details .input-box{
     margin-bottom: 15px;
     width: 100%;
   }
@@ -178,7 +178,7 @@ form .user-details .input{
     justify-content:left;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(135deg, #71b7e6, #138f8d);
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
 
   }
   }
@@ -192,7 +192,7 @@ form .user-details .input{
     justify-content:left;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(135deg, #71b7e6, #138f8d);
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
 
   }
 }
