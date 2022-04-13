@@ -6,4 +6,4 @@ def index(request):
 def openregisterpage(request):
     return render(request,'registration.html')
 def openMainPage(request):
-    return render (request, 'mainPage.html')
+    return render (request, 'aboutUs.html')
