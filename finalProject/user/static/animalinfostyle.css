@@ -1,0 +1,105 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    justify-content: space-between;
+    background-color: white;
+}
+.dog1pic{
+    width: 30%;
+    height: 70%;
+    margin-right: 15px;
+}
+html , body{
+    height: 100%;
+    width:100%;
+    background-image:url("Untitled-1.png");
+}
+
+h4{
+    font-weight: lighter;
+}
+h1{
+    font-weight: bolder;
+}
+h3{
+    font-weight: bold;
+
+}
+header{
+    height: 17%;
+    width: 100%;
+    background-color:  #28bab7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.nav {
+    width: 40%;
+    justify-content: space-around;
+    display: flex;
+}
+.nav-item a{
+    color: white;
+    
+    text-decoration: none;
+}
+.input-box input{
+
+  border-color: #138f8d;
+}
+
+
+
+ .search-container {
+  float: right;
+  margin-right: 5%;
+}
+.navbar navbar-expand-lg navbar-light bg-light{
+    width: 50%;
+    height: 20%;
+}
+.image-container img{
+margin-left: 20%;
+width: 50%;
+height: 100%;
+border-radius: 50%;
+}
+.image-container{
+    width: 20%;
+    height: 80%;
+}
+
+input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+ .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+.second{
+    display: flex;
+}
