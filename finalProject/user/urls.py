@@ -3,6 +3,7 @@ from user import views
 
 urlpatterns = [
     path('', views.index),
-    path('registerForm', views.openregisterpage)
+    path('registerForm', views.openregisterpage),
+    path('mainPage',  views.openMainPage)
     
 ]
