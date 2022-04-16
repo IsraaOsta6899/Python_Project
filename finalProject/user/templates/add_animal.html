@@ -48,15 +48,16 @@
         <h2>Add Your Pet for Sale</h2>
         <div class="main">
             <div class="content">
-                <form action="#">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
                 <div class="user-details">
                     <div class="form-input">
                         <span class="details">Pet Name</span>
-                        <input type="text" placeholder="Name..." required name="pet_name">
+                        <input type="text" placeholder="Name..." name="pet_name" required >
                     </div>
                     <div class="form-input">
                         <span class="details">Pet Age</span>
-                        <input type="text" placeholder="Age..." required name="pet_age">
+                        <input type="text" placeholder="Age..." name="pet_age" required >
                     </div>
                     <div class="form-input">
                         <span class="details">Description</span>
@@ -75,25 +76,24 @@
                         <span class="details">Pet Catogory</span>
                        
                         <select name="catgs" id="catgs">
-                            <option value="catogory_id">{{catogory.name}}</option>
-                            <option value="catogory_id">{{catogory.name}}</option>
-                            <option value="catogory_id">{{catogory.name}}</option>
-                            <option value="catogory_id">{{catogory.name}}</option>
+                            {%for catogory in categories%}
+                            <option value="{{catogory.id}}">{{catogory.name}}</option>
+                            {%endfor%}
                         </select>
                         
                     </div>
                     <div class="form-input">
                         <span class="details">Photo of your pet</span>
-                        <form method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
+                       
+                            
                                 <input type="file" name="upload" accept="image/*">
-                                <br>
-                                <button type="submit">Submit</button>
-                        </form>
+                       
                     </div>
+
                     <div class="button">
                         <input type="submit" value="Add">
                     </div>
                 </div>
+                </form>
 </body>
 </html>

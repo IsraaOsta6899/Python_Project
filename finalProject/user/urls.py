@@ -9,5 +9,8 @@ urlpatterns = [
     path('addAnimalPage',  views.addAnimalPage),
     path('allCategories',  views.allCategories),
     path('aboutUs',  views.aboutUs),
+    path('rigister', views.rigister),
+    path('login',views.login),
+    path('addNewAnimal', views.addNewAnimal),
 
 ]

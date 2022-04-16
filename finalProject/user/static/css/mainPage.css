@@ -2,7 +2,6 @@ html , body{
     height: 110%;
     width: 100%;
 
-   background-color: #f4e6cc;
 }
 h3{
     font-family: cursive;
@@ -139,7 +138,7 @@ h3
     align-items: center;
     justify-content: space-between;
     margin-top: 3%;
-    background-color: #f4e6cc;
+    /* background-color: #f4e6cc; */
 }
 .animal{
     width: 20%;
