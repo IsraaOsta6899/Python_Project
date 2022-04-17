@@ -1,0 +1,9 @@
+.table table-striped{
+    width: 80%;
+    height: 80%;
+    overflow: scroll;
+    margin-left: 10%;
+}
+body{
+    background-color: aqua;
+}

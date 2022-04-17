@@ -35,6 +35,12 @@
                     <a href="/aboutUs">About Us</a>
                   </li>
               </ul>
+            </li>
+            {%if user == admin%}
+            <li class="nav-item">
+              <a href="/requestPage">requests</a>
+            </li>
+           {%endif%}
             <div class="search-container">
                 <form action="#">
                     <div class="input-box">

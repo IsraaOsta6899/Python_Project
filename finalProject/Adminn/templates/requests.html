@@ -44,9 +44,28 @@
 
     </header>
     <section>
+        
+        <form action="#" method="post">
         <table class="table table-striped">
+            <th>Animal Name :</th>
+            <th>Adeed By:</th>
+            <th>Animal Price:</th>
+            <th>Animal Photo:</th>
+            <th>Accept or Reject:</th>
+            {%for animal in requests %}
+            <tr>
+                <td>{{animal.animal_name}}</td>
+                <td>{{animal.added_by.first_name}}-{{animal.added_by.first_name}}</td>
+                <td>{{animal.price}}</td>
+               
+               <td><img src="/finalProject/2021-04-10_2.png" alt="image for this animal"></td> 
+                <td> <a href="/accept/{{animal.id}}">Accept</a> | <a href="/reject/{{animal.id}}">Reject</a></td>
+
+            </tr>
+            {%endfor%}
             
         </table>
+    </form>
     </section>
 </body>
 </html>

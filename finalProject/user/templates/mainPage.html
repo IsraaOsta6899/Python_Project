@@ -31,10 +31,11 @@
             <li class="nav-item">
                 <a href="/aboutUs">About Us</a>
               </li>
-              {}
+              {%if user == admin%}
               <li class="nav-item">
                 <a href="/requestPage">requests</a>
               </li>
+             {%endif%} 
           </ul>
         <div class="search-container">
             <form action="#">
@@ -51,49 +52,28 @@
     </div>
     <h3>Latest Categories</h3>
     <section class="categories">
-        <!-- {% for category in categories%}
-        {%endfor%} -->
+        {% for category in lastcategories%}
+        
         <div class="category">
-            <img src="static/image/back1.jpg" alt="">
-            <span>category</span>
+            <img src="static/image/cat{{category.id}}.jpg" alt="">
+            <span>{{category.name}}</span>
         </div>
-        <div class="category">
-            <img src="static/image/back1.jpg" alt="">
-            <span>category</span>
-        </div>
-        <div class="category">
-            <img src="static/image/back1.jpg" alt="">
-            <span>category</span>
-        </div>
-        <div class="category">
-            <img src="static/image/back1.jpg" alt="">
-            <span>category</span>
-        </div>
+        {%endfor%} 
+        
         <a href="#">view more</a>
 
 
     </section>
     <h3>Latest uploaded Animals</h3>
     <section class="animals">
-        <!-- {% for category in categories%}
-        {%endfor%} -->
+        {% for animal in lastAnimals%}
+        
         <div class="animal">
-            <img src="static/image/back1.jpg" alt="">
-            <span>category</span>
+          <a href="/showAnimalInfo/{{animal.id}}"><img src="/Media/{{animal.image}}" alt=""></a>
+            <span>{{animal.animal_name}}</span>
         </div>
-        <div class="animal">
-            <img src="static/image/back.jpg" alt="">
-            <span>category</span>
-        </div>
-        <div class="animal">
-            <img src="static/image/back1.jpg" alt="">
-            <span>category</span>
-        </div>
-        <div class="animal">
-            <img src="static/image/back.jpg" alt="">
-            <span>category</span>
-        </div>
-        <a href="#">view more</a>
+        {%endfor%} 
+        <a href="/showAllAnimals">view more</a>
 
 
     </section>
