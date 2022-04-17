@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Animals</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/all_animals.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="top-nav">
+            <div class="logo">
+                <img src="static/LOGO.PNG" alt="PetShop_logo">
+            </div>
+            <div class="links">
+                <a href="/mainPage">Home</a><a href="/showAllAnimals">Animals</a><a href="addNewAnimal">Add Animal</a><a href="#">About Us</a>
+            </div>
+            <div class="search-bar">
+                <form onsubmit="event.preventDefault();" role="search">
+                    <label for="search">Search for stuff</label>
+                    <input id="searchs" type="search" placeholder="Search..." autofocus required />
+                    <button type="submit">Go</button>    
+                </form>
+            </div>
+        </div>
+        <div class="main">
+            <div id="location">
+                {%for catogory in categories%}
+                <p><a href="/mainPage">Home</a> /<a href="/allCategories">Catogories</a> / {{catogory.name}}</p>
+                {%endfor%}
+            </div>
+            <div id="all_animals">
+                {% for animals in animal_in_categories %}
+                <div id="animal" name="cat-1">
+                    <img id="img-2" src={{animal.image.url}} alt="dog-pic"> 
+                    <p>{{animal.animal_name}}</p>
+                </div>
+                {%endfor%}
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

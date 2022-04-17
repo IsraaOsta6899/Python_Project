@@ -7,7 +7,7 @@
     
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      {% load static %}
-    <link rel="stylesheet" href="{% static 'userStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/userStyle.css' %}">
    </head>
 <body >
   <div class="container">
@@ -19,12 +19,12 @@
           
           <div class="input">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
+            <input type="text" placeholder="Enter your email" name="email" required>
           </div>
          
           <div class="input">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <input type="text" placeholder="Enter your password" name="password" required>
           </div>
          
           
@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="circuler">
-      <img src="static/cat.jpg" alt="">
+      <img src="static/image/cat.jpg" alt="">
   </div>
 
 </body>
