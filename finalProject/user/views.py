@@ -131,13 +131,22 @@ def editinfo(request,animal_id):
     }
     return render(request,'editAnimal.html',context)
 def search_status(request):
-
+    print("hellllllllllllllllllllllllllllo")
     if request.method == "GET":
         search_text = request.GET['search_text']
+        print("kkkkkkkkkkkkkkkkkkkk")
         if search_text is not None and search_text != u"":
             search_text = request.GET['search_text']
             statuss = Animal.objects.filter(animal_name = search_text)
+            count= Animal.objects.filter(animal_name = search_text).count()
+            print("ggggggggggggggggggggggggg")
+            print(statuss)
         else:
             statuss = []
+            count=0
+            print("nnnnnoooooo")
 
-        return render(request, 'search.html', {'statuss':statuss})
+        return render(request, 'mainPage.html', {'statuss':statuss,'count':count, 'user': User.objects.get(id=request.session['id']),
+        'admin': User.objects.get(rule_type=1),
+        'lastcategories':models.getLastCategories(),
+        'lastAnimals':models.getlastAnimals(),})
