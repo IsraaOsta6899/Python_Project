@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'user.User'
+MEDIA_URL = "/Media/"
+MEDIA_PATH = "Media"
+MEDUA_ROOT=os.path.join(BASE_DIR,'finalProject/media')
 
 # Application definition
 

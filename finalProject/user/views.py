@@ -1,22 +1,32 @@
-from multiprocessing import context
 from django.shortcuts import render,HttpResponse,redirect
+from django.contrib import messages
 
 from user import models
 from user.models import User,Category,Animal
 
 # Create your views here.
 def index(request):
-    return render(request,'login.html')
+     return render(request,'search.html')
+    # return render(request,'login.html')
 def openregisterpage(request):
     return render(request,'registration.html')
 def openMainPage(request):
     context={
-        'user': User.objects.get(id=5)
+        'user': User.objects.get(id=request.session['id']),
+        'admin': User.objects.get(rule_type=1),
+        'lastcategories':models.getLastCategories(),
+        'lastAnimals':models.getlastAnimals(),
     }
-    return render (request, 'mainPage.html')
+    return render (request, 'mainPage.html',context)
 
 def showAllAnimals(request):
-    return render (request, 'mainPage.html')
+    context={
+        'user': User.objects.get(id=request.session['id']),
+        'allanimals':models.allAnimals(),
+        'admin': User.objects.get(rule_type=1),
+
+    }
+    return render (request, 'all_animals.html',context)
 
 def addAnimalPage(request):
 
@@ -43,34 +53,50 @@ def addAnimalPage(request):
 
 def allCategories(request):
     context = {
-        'categories': Category.objects.all()
+        'categories': Category.objects.all(),
+        'user': User.objects.get(id=request.session['id']),
+        'admin': User.objects.get(rule_type=1),
     }
-    return render (request, 'all_catogries.html', context)
+    return render (request, 'all_catogries.html',context)
 
 def aboutUs(request):
+    context={
+        'admin': User.objects.get(rule_type=1),
+        'user': User.objects.get(id=request.session['id']),
+
+
+    }
     return render (request, 'aboutUs.html')
 def rigister(request):
-    models.rigister(request.POST)
-    return redirect('/')
+    errors = User.objects.registration_validator(request.POST)
+        
+    if len(errors) > 0:
+        
+       
+        for key, value in errors.items():
+            messages.error(request, value)
+        
+        return render(request, 'registration.html')
+    else:
+        models.rigister(request.POST)
+        return redirect('/')
 
 def login(request):
-    # errors2 = User.objects.login_validator(request.POST)
+    errors = User.objects.login_validator(request.POST)
         
-    # if len(errors2) > 0:
-    #     context={
-    #         'flag':1
-    #     }
+    if len(errors) > 0:
+        
        
-    #     for key, value in errors2.items():
-    #         messages.error(request, value)
-       
-    #     return render(request, 'LoginAndRegistration.html',context)
-    # else:
+        for key, value in errors.items():
+            messages.error(request, value)
+        
+        return render(request, 'registration.html')
+    else:
+        
         flag=models.confermLogin(request.POST)
-        
+
         if(flag):
-           
-            
+
             request.session['email']=request.POST['email']
             user=User.objects.get(email=request.session['email'])
             request.session['id']=user.id
@@ -99,3 +125,29 @@ def catogoryview(request, catogory_id):
     }
     return render(request, 'all_animal_catg.html', context)
 
+def showAnimalInfo(request,animalid):
+    animal=models.getAnimal(animalid)
+    context={
+        'this_animal':animal,
+        'current_user':User.objects.get(id=request.session['id']),
+        'admin': User.objects.get(rule_type=1),
+        'user': User.objects.get(id=request.session['id']),
+
+    }
+    return render(request,'animalinfo.html',context)
+def editinfo(request,animal_id):
+    context = {
+    'animal':Animal.objects.get(id=animal_id)
+    }
+    return render(request,'editAnimal.html',context)
+def search_status(request):
+
+    if request.method == "GET":
+        search_text = request.GET['search_text']
+        if search_text is not None and search_text != u"":
+            search_text = request.GET['search_text']
+            statuss = Animal.objects.filter(animal_name = search_text)
+        else:
+            statuss = []
+
+        return render(request, 'search.html', {'statuss':statuss})

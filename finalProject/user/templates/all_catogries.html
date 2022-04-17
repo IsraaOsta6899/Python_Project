@@ -34,6 +34,11 @@
                 <li class="nav-item">
                     <a href="/aboutUs">About Us</a>
                 </li>
+                {%if user == admin%}
+                <li class="nav-item">
+                <a href="/requestPage">requests</a>
+                </li>
+                {%endif%}
             </ul>
             <div class="search-container">
                 <form action="#">

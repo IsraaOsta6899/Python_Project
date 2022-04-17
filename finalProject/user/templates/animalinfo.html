@@ -21,20 +21,25 @@
         </div>
         <ul class="nav">
             <li class="nav-item">
-              <a  aria-current="page" href="#">Home</a>
+              <a  aria-current="page" href="/mainPage">Home</a>
             </li>
             <li class="nav-item">
-              <a  href="#">Animals</a>
+              <a  href="/showAllAnimals">Animals</a>
             </li>
             <li class="nav-item">
-              <a href="#">Add animal</a>
+              <a href="/addAnimalPage">Add animal</a>
             </li>
             <li class="nav-item">
-              <a href="#">Categories</a>
+              <a href="/allCategories">Categories</a>
             </li>
             <li class="nav-item">
-                <a href="#">About Us</a>
+                <a href="/aboutUs">About Us</a>
               </li>
+              {%if user == admin%}
+              <li class="nav-item">
+                <a href="/requestPage">requests</a>
+              </li>
+             {%endif%} 
           </ul>
         <div class="search-container">
             <form action="#">
@@ -46,23 +51,29 @@
           </div>
 
     </header>
-      <div class="second">
-            <img src="static/image/animal1.jpg" alt="dogpic" class="dog1pic">
-            <div class="right">
-                <h3>German Shepherd</h3>
-                <h6>from <a href="/Dogscategory">Dogs</a></h6>
-                <p>One factor to determine whether a dog's intelligence is to see if the breed is used as a service animal. German shepherds are the perfect example. This breed is used as therapy dogs, medical assistance dogs, and, of course, police dogs. The German shepherd is known for learning commands for multiple tasks.</p>
-                <h4>Animal Info:</h4>
-                <h6>age:</h6>
-                <h6>price:</h6>
-                <h4>Seller Info:</h4>
-                <h6>Name:</h6>
-                <h6>Email:</h6>
-                <h6>Phone no.:</h6>
-                <h6>Email:</h6>
-            </div>
-        </div>
-    </div>
+    <div class="second">
+      <img src="/Media/{{this_animal.image}}" alt="dogpic" class="dog1pic">
+      <div class="right">
+          <h3>{{this_animal.animal_name}}</h3>
+          <h6>from <a href="/{{this_animal.category}}">{{this_animal.category.name}}</a></h6>
+          <p>{{this_animal.description}}</p>
+          <h4>Animal Info:</h4>
+          <h6>age:{{this_animal.age}}</h6>
+          <h6>price:{{this_animal.price}}</h6>
+          <h4>Seller Info:</h4>
+          <h6>Name:{{this_animal.added_by.first_name}}</h6>
+          <h6>Email:{{this_animal.added_by.email}}</h6>
+          <h6>Phone no.:{{this_animal.added_by.phone_number}}</h6>
+          {%ifequal current_user admin%}
+          <button><a href="/edit_info/{{this_animal.id}}">Edit info</a></button>
+          {%endifequal%}
+          {%ifequal current_user admin%}
+          <button><a href="/deleteAnimal/{{this_animal.id}}">Delete</a></button>
+          {%endifequal%}
+
+      </div>
+  </div>
+
     
 </body>
 </html>
