@@ -68,7 +68,6 @@ label {
     overflow: hidden;
 }
 .top-nav{
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,9 +77,10 @@ label {
     margin-bottom: 40px;
 }
 img{
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    border: 3px solid grey;
 }
 a{
     text-decoration: none;
@@ -91,7 +91,7 @@ h2{
     text-align: center;
 }
 .main{
-    width: 600px;
+    width: 40%;
     margin: 40px auto;
     align-content: center;
 }
@@ -112,7 +112,7 @@ form .form-input span.details{
     height: 45px;
     width: 100%;
     outline: none;
-    font-size: 16px;
+    font-size: 1rem;
     border-radius: 5px;
     padding-left: 15px;
     border: 1px solid #ccc;
@@ -121,16 +121,15 @@ form .form-input span.details{
 }
 form .button{
     height: 45px;
-    margin: 35px 0
+    margin: 35px 0;
 }
-form .button input, .form-input form button{
+form .button input{
     height: 100%;
-    width: 600px;
+    width: 100%;
     border-radius: 5px;
     border: none;
     color: #fff;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 1rem;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;

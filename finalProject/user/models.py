@@ -8,7 +8,6 @@ from django.core.validators import RegexValidator
 from .managers import CustomUserManager
 import re
 
-
 class Rule(models.Model):
     DEFAULT_PK=1
     rule_name=models.CharField(max_length=200)
@@ -90,6 +89,9 @@ class Category(models.Model):
     name=models.CharField(max_length=200)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
 
 class Animal(models.Model):
     animal_name=models.CharField(max_length=200)

@@ -16,9 +16,10 @@ img{
 }
 
 #img-2{
-    width:80%;
+    width:85%;
     height: 200px;
     border-radius: 10%;
+    display: flex;
 }
 p{
     width: 20%;
@@ -27,21 +28,29 @@ p{
     
     width: 90%;
     margin-top: 2%;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 #catogries{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
     margin-left: 25px;
     margin-top: 50px;
     width: 80%;
     margin-left: 10%;
+    /* flex-direction: */
 }
 #catogory{
     width: 23%;
     height: 20%;
-    
+}
+#catogory p{
+    margin-top: 20px;
+    margin-left: 65px;
+}
+#catogory a{
+    text-decoration: none;
+    color: grey;
 }
 #catogory:hover {
     width: 27%;

@@ -20,63 +20,49 @@
             </div>
             <ul class="nav">
                 <li class="nav-item">
-                  <a  aria-current="page" href="/mainPage">Home</a>
+                    <a  aria-current="page" href="/mainPage">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a  href="/showAllAnimals">Animals</a>
+                    <a  href="/showAllAnimals">Animals</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/addAnimalPage">Add animal</a>
+                    <a href="/addAnimalPage">Add animal</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/allCategories">Categories</a>
+                    <a href="/allCategories">Categories</a>
                 </li>
                 <li class="nav-item">
                     <a href="/aboutUs">About Us</a>
-                  </li>
-              </ul>
-            </li>
-            {%if user == admin%}
-            <li class="nav-item">
-              <a href="/requestPage">requests</a>
-            </li>
-           {%endif%}
+                </li>
+                {%if user == admin%}
+                <li class="nav-item">
+                <a href="/requestPage">requests</a>
+                </li>
+                {%endif%}
+            </ul>
             <div class="search-container">
                 <form action="#">
                     <div class="input-box">
                         <input type="text" placeholder="Search .. " required>
-                      </div>
-                  
+                    </div> 
                 </form>
-              </div>
-    
+            </div>
         </header>
         
         <div class="main">
             <div id="location">
-                <p><a href="#">Home</a> / Catogries</p>
+                <p><a href="/mainPage">Home</a> / Catogries</p>
             </div>
             <div id="catogries">
-                <div id="catogory" name="cat-1">
-                    <img id="img-2" src="static/image/dog.jpeg" alt="dog-pic">
-                    <p>Dogs</p>
+                {%for catogory in categories%} 
+                <div  id="catogory" name="cat-1">
+                    <a href="/catogries/{{catogory.id}}"><img id="img-2" src="static/image/pet{{catogory.id}}.jpg" alt="{{ category.name }}">
+                        <p>{{catogory.name}}</p>
+                    </a>
                 </div>
-                <div id="catogory" name="cat-2">
-                    <img id="img-2" src="static/image/cat2.jpg" alt="dog-pic">
-                    <p>Cats</p>
-                </div>
-                <div id="catogory" name="cat-3">
-                    <img id="img-2" src="static/image/rabbits.jpg" alt="dog-pic">
-                    <p>Rabbits</p>
-                </div>
-                <div id="catogory" name="cat-4">
-                    <img id="img-2" src="static/image/tortoises.jpg" alt="dog-pic">
-                    <p>Tortoises</p>
-                </div>
+                {%endfor%}
             </div>
-
         </div>
-  
 
 </body>
 </html>
