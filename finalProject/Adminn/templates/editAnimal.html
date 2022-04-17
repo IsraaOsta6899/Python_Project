@@ -79,11 +79,13 @@
                     </div>
                     <div class="form-input">
                         <span class="details">Pet Catogory</span>
-                        {% for catogory in all_catogories %}
                         <select name="catgs" id="catgs" value="{{animal.category.name}}">
+                        {% for catogory in all_catogories %}
+                       
                             <option value="catogory_id">{{catogory.name}}</option>
+                            {%endfor%}
                         </select>
-                        {%endfor%}
+                      
                     </div>
                     <div class="form-input">
                         <span class="details">Photo of your pet</span>

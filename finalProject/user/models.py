@@ -4,8 +4,8 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import RegexValidator
+from django.contrib.auth.models import UserManager
 
-from .managers import CustomUserManager
 import re
 
 class Rule(models.Model):
@@ -48,24 +48,25 @@ class CUserManager(models.Manager):
                 errors['phone'] = "Invalid phone number!"
             return errors
         def login_validator(self, postData):
-            errors = {}
+            errors1 = {}
             EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
             phone_regex=r'^\?1?\d{10}$'
             
             
             
             if not EMAIL_REGEX.match(postData['email']):      
-                errors['email'] = "Invalid email address!"
+                errors1['email'] = "Invalid email address!"
 
             if  len(postData['password'])<1:         
-                errors["password"] = "both field are requierd"
+                errors1["password"] = "both field are requierd"
             if  len(postData['email'])<1:         
-                errors["email"] = "both field are requierd"
+                errors1["email"] = "both field are requierd"
            
             
-            return errors
+            return errors1
 
 class User(AbstractBaseUser, PermissionsMixin):
+    
     first_name=models.CharField(max_length=200)
     last_name=models.CharField(max_length=200)
     email=models.CharField(max_length=255, unique=True)
@@ -81,6 +82,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = []
 
     objects =CUserManager() 
+    # objects = UserManager()
+    
 
     def __str__(self):
         return self.email
@@ -115,14 +118,18 @@ def rigister(info):
     User.objects.create(first_name=info['fname'],last_name=info['lname'],email=info['email'], password=pw_hash,phone_number=info['phone'],rule_type=a)
     return
 def confermLogin(info):
-    user = User.objects.get(email=info['email'])
-
-    if user:
-        if bcrypt.checkpw(info['password'].encode('utf-8'), user.password.encode()):
-             return True
-        else:
+    user = User.objects.filter(email=info['email'])
+    print("jjjjjjjjjjjjjjjjjjjjjjjj")
+    print(len(user))
+    if(len(user)!=0):
+        if user[0]:
+            if bcrypt.checkpw(info['password'].encode(), user[0].password.encode()):
+                return True
+            else:
+                return False
+        else: 
             return False
-    else: 
+    else:
         return False
 def getLastCategories():
     last_four = Category.objects.all().order_by('-id')[:4]

@@ -15,7 +15,7 @@
   <ul id="search-results">
     <header>
         <div class="image-container">
-            <img src="static/image/LOGO.png" alt="">
+            <img src="static/image/LOGO.png"  alt="">
 
         </div>
         <ul class="nav">
@@ -62,21 +62,21 @@
     <ul class="statuss">
         {% for animal in statuss %}
         <div class="animal">
-          <a href="/showAnimalInfo/{{animal.id}}"><img src="/Media/{{animal.image}}" alt=""></a>
+          <a href="/showAnimalInfo/{{animal.id}}"><img src="/Media/{{animal.image}}" style="height:300px ;" alt=""></a>
             <span>{{animal.animal_name}}</span>
         </div>
         {% endfor %}    
     </ul>
 {% else %}
 <div class="img-container">
-  <img src="static/image/back1.jpg" alt="" style="height: 300px;">
+  <img src="static/image/back2.jpg" alt="" style="height: 300px;">
 </div>
 <h3>Latest Categories</h3>
 <section class="categories">
   {% for category in lastcategories%}
   
   <div class="category">
-      <img src="static/image/cat{{category.id}}.jpg" alt="">
+      <img src="static/image/cat{{category.id}}.jpg" style="height: 200px;" alt="">
       <span>{{category.name}}</span>
   </div>
   {%endfor%} 
@@ -90,7 +90,7 @@
   {% for animal in lastAnimals%}
   
   <div class="animal">
-    <a href="/showAnimalInfo/{{animal.id}}"><img src="/Media/{{animal.image}}" alt=""></a>
+    <a href="/showAnimalInfo/{{animal.id}}"><img src="/Media/{{animal.image}}" style="height:200px ;" alt=""></a>
       <span>{{animal.animal_name}}</span>
   </div>
   {%endfor%} 
@@ -102,9 +102,21 @@
 {% endif %}
  
     
-    <footer>
-        <img src="static/LOGO.png" alt="logo image">
-    </footer>
+<footer class="bg-light text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+ 
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">Pet-Animal.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
   </ul>   
     <script>
       $(function() {

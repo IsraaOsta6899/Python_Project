@@ -110,7 +110,7 @@ a{
 }
 .category img{
     width: 100%;
-    height:80% ;
+    height:200px ;
     border-radius: 4%;
 }
 .category span{
@@ -146,7 +146,7 @@ h3
 }
 .animal img{
     width: 100%;
-    height:80% ;
+    height:200px ;
     border-radius: 4%;
 }
 .animal span{

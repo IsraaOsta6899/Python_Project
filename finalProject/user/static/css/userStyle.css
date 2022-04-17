@@ -10,11 +10,11 @@ body{
   display: flex;
   justify-content:left;
   align-items: center;
-  padding: 7%;
+  padding: 3%;
   background: linear-gradient(135deg, #b1b4b7, #ffa500);
 }
 .container{
-  margin-left: 10%;
+  margin-left: 7%;
     max-width: 40%;
     width: 100%;
     background-color: #fff;
@@ -220,7 +220,7 @@ display: none;
 
   }
   .circuler img{
-    margin-left: 30%;
+  margin-left: 20%;
 border-radius: 50%;
 width: 100px;
 height:100px;

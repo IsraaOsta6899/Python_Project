@@ -90,7 +90,7 @@ def login(request):
         for key, value in errors.items():
             messages.error(request, value)
         
-        return render(request, 'registration.html')
+        return render(request, 'login.html')
     else:
         
         flag=models.confermLogin(request.POST)
@@ -139,10 +139,11 @@ def showAnimalInfo(request,animalid):
 
 def editinfo(request,animal_id):
     context = {
+    'all_catogories':Category.objects.all(),
     'animal':Animal.objects.get(id=animal_id)
     }
     return render(request,'editAnimal.html',context)
-    
+
 def search_status(request):
     print("hellllllllllllllllllllllllllllo")
     if request.method == "GET":
