@@ -20,7 +20,7 @@ header{
 * {box-sizing: border-box;}
 
 .nav {
-    width: 40%;
+    width: 50%;
     justify-content: space-around;
     font-family: cursive;
 }

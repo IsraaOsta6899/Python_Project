@@ -15,3 +15,7 @@ body{
     margin-top: 5%;
     overflow: scroll;
 }
+td img{
+    width:100px;
+    height: 100px;
+}

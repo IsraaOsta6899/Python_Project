@@ -13,7 +13,7 @@
 <body>
     <header>
         <div class="image-container">
-            <img src="static/images/LOGO.png" alt="">
+            <img src="static/image/LOGO.png" alt="">
 
         </div>
         <ul class="nav">
@@ -55,14 +55,29 @@
             {%for animal in requests %}
             <tr>
                 <td>{{animal.animal_name}}</td>
-                <td>{{animal.added_by.first_name}}-{{animal.added_by.first_name}}</td>
+                <td>{{animal.added_by.first_name}}-{{animal.added_by.last_name}}</td>
                 <td>{{animal.price}}</td>
                
-               <td><img src="/finalProject/2021-04-10_2.png" alt="image for this animal"></td> 
+               <td><img src="/Media/{{animal.image}}" style="    width: 100px;" alt="image for this animal"></td> 
                 <td> <a href="/accept/{{animal.id}}">Accept</a> | <a href="/reject/{{animal.id}}">Reject</a></td>
             </tr>
             {%endfor%}            
         </table>
       </div>
+      <footer class="bg-light text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+       
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">Pet-Animal.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
 </body>
 </html>

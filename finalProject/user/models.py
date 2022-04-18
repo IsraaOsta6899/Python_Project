@@ -64,6 +64,25 @@ class CUserManager(models.Manager):
            
             
             return errors1
+        def adding_validator(self, postData):
+            errors2 = {}
+            if len(postData['pet_name']) < 2:
+                errors2["pet_name"] = "animal name should be at least 2 characters"
+            if len(postData['pet_age']) < 1:
+                errors2["pet_age"] = "animal age should be a number"
+            try:
+                val=int(postData['pet_age'])
+            except ValueError:
+                errors2["pet_age1"] = "animal age should be a number"
+            if len(postData['pet_price']) < 1:
+                errors2["pet_price"] = "animal age should be a number"
+            try:
+                val=int(postData['pet_price'])
+            except ValueError:
+                errors2["petprice1"] = "animal age should be a number"
+
+            return errors2
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     
@@ -109,13 +128,22 @@ class Animal(models.Model):
     category=models.ForeignKey(Category,related_name='animals_in_this_category', on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
+    objects=CUserManager()
    
 
 def rigister(info):
-    a=Rule.objects.get(id=2)
-    password=info['password']
-    pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
-    User.objects.create(first_name=info['fname'],last_name=info['lname'],email=info['email'], password=pw_hash,phone_number=info['phone'],rule_type=a)
+    all_Users=User.objects.all().count
+    if all_Users==0:
+        b=Rule.objects.get(id=1)
+        password=info['password']
+        pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+        User.objects.create(first_name=info['fname'],last_name=info['lname'],email=info['email'], password=pw_hash,phone_number=info['phone'],rule_type=b)
+    
+    else:
+        a=Rule.objects.get(id=2)
+        password=info['password']
+        pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+        User.objects.create(first_name=info['fname'],last_name=info['lname'],email=info['email'], password=pw_hash,phone_number=info['phone'],rule_type=a)
     return
 def confermLogin(info):
     user = User.objects.filter(email=info['email'])
@@ -154,6 +182,10 @@ def allAnimals():
 
 def getAnimal(animalid):
     return Animal.objects.get(id=animalid)
+def addnewcategory1(info):
+    c=Category.objects.create(name=info['cat_name'])
+    return
+
 # c=Rule.objects.get(id=1)
 # password="12345678"
 # pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()

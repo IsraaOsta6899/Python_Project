@@ -17,6 +17,8 @@ urlpatterns = [
     path('showAnimalInfo/<int:animalid>', views.showAnimalInfo),
     path('edit_info/<int:animal_id>',views.editinfo),
     path('status/search_status/',views.search_status),
+    path('cPage',views.cPage ),
+    path('addnewcategory',views.addnewcategory)
 
 
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

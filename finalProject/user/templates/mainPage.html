@@ -18,7 +18,7 @@
             <img src="static/image/LOGO.png"  alt="">
 
         </div>
-        <ul class="nav">
+        <ul class="nav" style="width: 45%;">
             <li class="nav-item">
               <a  aria-current="page" href="/mainPage">Home</a>
             </li>
@@ -39,6 +39,11 @@
                 <a href="/requestPage">requests</a>
               </li>
              {%endif%} 
+             {%if user == admin%}
+              <li class="nav-item">
+                <a href="/cPage">add Category</a>
+              </li>
+             {%endif%}
              <li class="nav-item">
               <a href="/">log out </a>
             </li>

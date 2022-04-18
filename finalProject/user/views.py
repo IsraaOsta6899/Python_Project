@@ -30,27 +30,36 @@ def showAllAnimals(request):
     return render (request, 'all_animals.html',context)
 
 def addAnimalPage(request):
+    
+   
 
-    context={
-        'categories': Category.objects.all()
-    }
-    if request.method=='POST':
-        animal = Animal()
-        animal.animal_name=request.POST['pet_name']
-        animal.age=request.POST['pet_age']
-        animal.description=request.POST['pet_description']
-        animal.price=request.POST['pet_price']
-        c=Category.objects.get(id=request.POST['catgs'])
-        animal.category=c
-        animal.isDelete=False
-        animal.isAccepted=False
-        user=User.objects.get(id=1)
-        animal.added_by=user
-        if len(request.FILES )!=0 :
-            animal.image=request.FILES['upload']
-        animal.save()
-        return redirect('/mainPage')
-    return render (request, 'add_animal.html', context)
+        context={
+            'categories': Category.objects.all()
+        }
+        if request.method=='POST':
+            errors = Animal.objects.adding_validator(request.POST)
+            if len(errors) > 0:
+                for key, value in errors.items():
+                     messages.error(request, value)
+                return redirect('/addAnimalPage')
+            else:
+
+                animal = Animal()
+                animal.animal_name=request.POST['pet_name']
+                animal.age=request.POST['pet_age']
+                animal.description=request.POST['pet_description']
+                animal.price=request.POST['pet_price']
+                c=Category.objects.get(id=request.POST['catgs'])
+                animal.category=c
+                animal.isDelete=False
+                animal.isAccepted=False
+                user=User.objects.get(id=1)
+                animal.added_by=user
+                if len(request.FILES )!=0 :
+                    animal.image=request.FILES['upload']
+                animal.save()
+                return redirect('/mainPage')
+        return render (request, 'add_animal.html', context)
 
 def allCategories(request):
     context = {
@@ -164,3 +173,8 @@ def search_status(request):
         'admin': User.objects.get(rule_type=1),
         'lastcategories':models.getLastCategories(),
         'lastAnimals':models.getlastAnimals(),})
+def cPage(request):
+    return render(request,'addCategory.html')
+def addnewcategory(request):
+    models.addnewcategory1(request.POST)
+    return redirect('/mainPage')
