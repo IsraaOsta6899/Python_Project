@@ -14,15 +14,26 @@ also user can add his animal to sell it by providing information and image to an
 
 for the admin , he can do all the features mentioned for normal user ,  in addition to create new category , edit and delete for each animal in website ,after user add new animal at the first this animal send as a request to admin to accept or reject it
 to make some restriction in website and prevent garpish data
+
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(80).png)
+
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(81).png)
+
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(83).png)
+
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(84).png)
+
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(85).png)
+
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(86).png)
+
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(87).png)
+
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(88).png)
+
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(89).png)
+
+
 
 
 
