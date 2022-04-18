@@ -22,6 +22,8 @@ to make some restriction in website and prevent garpish data
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(86).png)
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(87).png)
 ![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(88).png)
+![Pyothn](https://github.com/IsraaOsta6899/images/blob/main/Screenshot%20(89).png)
+
 
 
 # Made By:
