@@ -1,5 +1,19 @@
 # Pet Animal
 
+# Made By:
+  1. Israa Usta
+  2. Malik Shakaa
+  3. Hanei Islim
+---
+#  Technologies used in our project:
+  * Html
+  * CSS
+  * Ajax
+  * Java scripts
+  * Django python
+  * bootstrap
+ 
+
 # Introduction
 We build our project to help people to reach and git their favorites animal 
 with good price , also help people who wants to sell their animal by putting information about their animal in our website
@@ -37,7 +51,3 @@ to make some restriction in website and prevent garpish data
 
 
 
-# Made By:
- 1- Israa Usta
- 2- Malik Shakaa
- 3- Hanei Islim
